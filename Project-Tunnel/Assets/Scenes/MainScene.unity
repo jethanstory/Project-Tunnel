@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4674859eaa341d14f9f6a37644b53780, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 401889abb48d7c943ba79255185282f9, type: 2}
 --- !u!1001 &5966603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513393700563952244, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719575555041888266, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_RootOrder
@@ -5734,7 +5734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513393700563952244, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719575555041888266, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_RootOrder
@@ -9401,7 +9401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513393700563952244, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719575555041888266, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_RootOrder
@@ -9984,7 +9984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513393700563952244, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719575555041888266, guid: a9544c8b6d4bab1468b4cdfcf76b6f37, type: 3}
       propertyPath: m_RootOrder
