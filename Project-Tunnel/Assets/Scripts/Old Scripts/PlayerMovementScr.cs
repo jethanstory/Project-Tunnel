@@ -155,6 +155,12 @@ public class PlayerMovementScr : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
 
+        // if (Input.GetButtonDown("Jump"))
+        //     {
+        //         V.y = Mathf.Sqrt(JumpHight * -2f * gravity);
+        //     }
+        //     V.y += gravity * Time.deltaTime;
+
         controller.Move(velocity * Time.deltaTime);
 
         //PlayFootStepAudio();
