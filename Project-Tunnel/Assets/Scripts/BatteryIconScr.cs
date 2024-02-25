@@ -26,6 +26,10 @@ public class BatteryIconScr : MonoBehaviour
     public bool hasBattery = true;
     public bool isOut = false;
 
+    public int battCount = 0;
+
+    public bool bigSwap = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,11 @@ public class BatteryIconScr : MonoBehaviour
         if (isOut)
         {
             BatteryReset();
+        }
+
+        else if (battCount > 5)
+        {
+            bigSwap = true;
         }
 
     }
@@ -79,8 +88,8 @@ public class BatteryIconScr : MonoBehaviour
                                 batteryOneSix.SetActive(false);
                                 batteryZeroSix.SetActive(true);
 
-                                recObject.SetActive(false);
-                                recDotObject.SetActive(false);
+                                // recObject.SetActive(false);
+                                // recDotObject.SetActive(false);
                                 StopAllCoroutines();
 
                                 StartBlinking();
@@ -106,6 +115,8 @@ public class BatteryIconScr : MonoBehaviour
             }
         }
     }
+
+
 
 
 
@@ -147,6 +158,7 @@ public class BatteryIconScr : MonoBehaviour
         secondsDown += Time.deltaTime;
         if (secondsDown > 7)
         {
+            battCount++;
             secondsCount = 0;
             isOut = false;
             hasBattery = true;
