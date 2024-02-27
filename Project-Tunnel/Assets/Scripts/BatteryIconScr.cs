@@ -45,8 +45,8 @@ public class BatteryIconScr : MonoBehaviour
     {
         if (hasBattery)
         {
-            // BatteryCheck();
-            BatteryCheckTest();
+            BatteryCheck();
+            // BatteryCheckTest();
         }
 
         if (isOut)
@@ -54,7 +54,7 @@ public class BatteryIconScr : MonoBehaviour
             BatteryReset();
         }
 
-        else if (battCount > 1)
+        else if (battCount > 5)
         {
             bigSwap = true;
         }
@@ -227,7 +227,7 @@ public class BatteryIconScr : MonoBehaviour
 
 
 
-        if (battCount > 1)
+        if (battCount > 5)
         {
             swapCanvas.SetActive(false);
             swapCameraCanvas.SetActive(true);
