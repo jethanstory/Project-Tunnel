@@ -30,6 +30,8 @@ public class BatteryIconScr : MonoBehaviour
 
     public bool bigSwap = false;
 
+    public GameObject swapCanvas;
+
 
     // Start is called before the first frame update
     void Start()
@@ -156,6 +158,7 @@ public class BatteryIconScr : MonoBehaviour
     void BatteryReset()
     {
         secondsDown += Time.deltaTime;
+        swapCanvas.SetActive(true);
         if (secondsDown > 7)
         {
             battCount++;
@@ -166,6 +169,7 @@ public class BatteryIconScr : MonoBehaviour
             recObject.SetActive(true);
             lightObject.SetActive(true);
             recDotObject.SetActive(true);
+            swapCanvas.SetActive(false);
         }
     }
 
