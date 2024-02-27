@@ -12,6 +12,10 @@ public class SwapCameraScr : MonoBehaviour
     public GameObject currRawImage;
     public GameObject nextRawImage;
 
+    public float secondsCount;
+
+    public GameObject swapCanvas;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,13 @@ public class SwapCameraScr : MonoBehaviour
             nextCamera.SetActive(true);
             currRawImage.SetActive(false);
             nextRawImage.SetActive(true);
+
+            // swapCanvas.SetActive(true);
+
+            // secondsCount += Time.deltaTime;
+            // if (secondsCount > 2)
+            //     swapCanvas.SetActive(false);
+
         }
     }
 }

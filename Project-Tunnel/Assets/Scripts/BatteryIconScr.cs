@@ -31,6 +31,7 @@ public class BatteryIconScr : MonoBehaviour
     public bool bigSwap = false;
 
     public GameObject swapCanvas;
+    public GameObject swapCameraCanvas;
 
 
     // Start is called before the first frame update
@@ -44,7 +45,8 @@ public class BatteryIconScr : MonoBehaviour
     {
         if (hasBattery)
         {
-            BatteryCheck();
+            // BatteryCheck();
+            BatteryCheckTest();
         }
 
         if (isOut)
@@ -52,7 +54,7 @@ public class BatteryIconScr : MonoBehaviour
             BatteryReset();
         }
 
-        else if (battCount > 5)
+        else if (battCount > 1)
         {
             bigSwap = true;
         }
@@ -106,6 +108,67 @@ public class BatteryIconScr : MonoBehaviour
                                     recDotObject.SetActive(false);
                                     hasBattery = false;
                                     isOut = true;
+                                    battCount++;
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    void BatteryCheckTest()
+    {
+        secondsDown = 0;
+        secondsCount += Time.deltaTime;
+
+        if (secondsCount > 2)
+        {
+            batteryFull.SetActive(false);
+            batteryFiveSix.SetActive(true);
+            if (secondsCount >= 4)
+            {
+                batteryFiveSix.SetActive(false);
+                batteryFourSix.SetActive(true);
+                if (secondsCount >= 6)
+                {
+                    batteryFourSix.SetActive(false);
+                    batteryThreeSix.SetActive(true);
+                    if (secondsCount >= 8)
+                    {
+                        batteryThreeSix.SetActive(false);
+                        batteryTwoSix.SetActive(true);
+                        if (secondsCount >= 10)
+                        {
+                            batteryTwoSix.SetActive(false);
+                            batteryOneSix.SetActive(true);
+                            if (secondsCount >= 12)
+                            {
+                                batteryOneSix.SetActive(false);
+                                batteryZeroSix.SetActive(true);
+
+                                // recObject.SetActive(false);
+                                // recDotObject.SetActive(false);
+                                StopAllCoroutines();
+
+                                StartBlinking();
+                                if (secondsCount >= 14)
+                                {
+                                    // StopBlinking();
+                                    StopAllCoroutines();
+
+                                    batteryZeroSix.SetActive(false);
+                                    recObject.SetActive(false);
+                                    lightObject.SetActive(false);
+                                    recDotObject.SetActive(false);
+                                    hasBattery = false;
+                                    isOut = true;
+                                    battCount++;
 
                                 }
                             }
@@ -158,10 +221,20 @@ public class BatteryIconScr : MonoBehaviour
     void BatteryReset()
     {
         secondsDown += Time.deltaTime;
+
+
         swapCanvas.SetActive(true);
+
+
+
+        if (battCount > 1)
+        {
+            swapCanvas.SetActive(false);
+            swapCameraCanvas.SetActive(true);
+        }
         if (secondsDown > 7)
         {
-            battCount++;
+            // battCount++;
             secondsCount = 0;
             isOut = false;
             hasBattery = true;
@@ -170,6 +243,7 @@ public class BatteryIconScr : MonoBehaviour
             lightObject.SetActive(true);
             recDotObject.SetActive(true);
             swapCanvas.SetActive(false);
+            swapCameraCanvas.SetActive(false);
         }
     }
 
