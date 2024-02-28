@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - PickUpNote
+  - Shadowman
   layers:
   - Default
   - TransparentFX
