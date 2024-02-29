@@ -23,7 +23,7 @@ public class ShadowmanScr : MonoBehaviour
             Debug.Log("HIT");
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
-            shadow.SetActive(false);
+            //shadow.SetActive(false);
 
 
         }
