@@ -52,6 +52,8 @@ public class PlayerMovementScr : MonoBehaviour
     Vector3 velocity;
     public bool isGrounded;
 
+    public GameObject justBreathe;
+
 
 
     void Start()
@@ -123,7 +125,10 @@ public class PlayerMovementScr : MonoBehaviour
             speed = 7f; //20
             sprintTime += -20;
             if (sprintTime < 0)
+            {
                 canSprint = false;
+                justBreathe.SetActive(true);
+            }
             m_Camera.transform.localPosition =
             m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
                              (speed * (m_IsWalking ? 1f : m_RunstepLenghten)));
@@ -145,6 +150,7 @@ public class PlayerMovementScr : MonoBehaviour
             {
                 // CatchBreathTime = 0;
                 canSprint = true;
+                justBreathe.SetActive(false);
             }
             // else if (sprintTime == 0)
             // {
