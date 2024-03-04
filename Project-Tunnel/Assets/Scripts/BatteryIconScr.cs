@@ -26,9 +26,11 @@ public class BatteryIconScr : MonoBehaviour
     public bool hasBattery = true;
     public bool isOut = false;
 
-    public int battCount = 0;
+    public int battCount = 0; // 5
 
     public bool bigSwap = false;
+
+    int maxBattCount;
 
     public GameObject swapCanvas;
     public GameObject swapCameraCanvas;
@@ -54,7 +56,7 @@ public class BatteryIconScr : MonoBehaviour
             BatteryReset();
         }
 
-        else if (battCount > 5)
+        else if (battCount > maxBattCount)
         {
             bigSwap = true;
         }
@@ -227,7 +229,7 @@ public class BatteryIconScr : MonoBehaviour
 
 
 
-        if (battCount > 5)
+        if (battCount > maxBattCount)
         {
             swapCanvas.SetActive(false);
             swapCameraCanvas.SetActive(true);

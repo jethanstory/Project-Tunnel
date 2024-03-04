@@ -6,6 +6,8 @@ public class SwapCameraScr : MonoBehaviour
 {
 
     public GameObject rootObject;
+
+    public GameObject fpsPlayer;
     public GameObject currCamera;
     public GameObject nextCamera;
 
@@ -32,6 +34,7 @@ public class SwapCameraScr : MonoBehaviour
             nextCamera.SetActive(true);
             currRawImage.SetActive(false);
             nextRawImage.SetActive(true);
+            // fpsPlayer.GetComponent<
 
             // swapCanvas.SetActive(true);
 
