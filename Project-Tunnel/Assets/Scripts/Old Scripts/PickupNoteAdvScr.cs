@@ -12,6 +12,7 @@ public class PickupNoteAdvScr : MonoBehaviour
     bool hasItem; // a bool to see if you have an item in your hand
 
     public GameObject notesCanvas;
+    public GameObject notesCanvasLowRes;
     public bool activeCanvas;
     public GameObject infoText;
     public GameObject fpsPlayer;
@@ -24,12 +25,11 @@ public class PickupNoteAdvScr : MonoBehaviour
     bool pickedSubsequentNote = false;
 
     public GameObject mann;
-
-
-
-
     public GameObject noteSecondCanvas;
+    public GameObject noteSecondCanvasLowRes;
     public GameObject noteThirdCanvas;
+    public GameObject noteThirdCanvasLowRes;
+    public GameObject rootObject;
 
 
     // Start is called before the first frame update
@@ -64,6 +64,10 @@ public class PickupNoteAdvScr : MonoBehaviour
     {
         if (other.gameObject.tag == "PickUpNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
+            if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+            {
+                notesCanvasLowRes.SetActive(true);
+            }
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             //infoText.SetActive(true);
@@ -98,6 +102,11 @@ public class PickupNoteAdvScr : MonoBehaviour
 
         if (other.gameObject.tag == "PickUpSecondNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
+
+            if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+            {
+                noteSecondCanvasLowRes.SetActive(true);
+            }
             mann.SetActive(true);
             pickedSubsequentNote = true;
             canpickup = true;  //set the pick up bool to true
@@ -188,6 +197,9 @@ public class PickupNoteAdvScr : MonoBehaviour
         //infoText.SetActive(false);
         notesCanvas.SetActive(false);
         noteSecondCanvas.SetActive(false);
+        notesCanvasLowRes.SetActive(false);
+        noteSecondCanvasLowRes.SetActive(false);
+
 
         if (numNotes >= 3)
         {
