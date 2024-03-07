@@ -12,6 +12,7 @@ public class PickupNoteAdvScr : MonoBehaviour
     bool hasItem; // a bool to see if you have an item in your hand
 
     public GameObject notesCanvas;
+    public GameObject notesCanvasLowRes;
     public bool activeCanvas;
     public GameObject infoText;
     public GameObject fpsPlayer;
@@ -22,12 +23,13 @@ public class PickupNoteAdvScr : MonoBehaviour
     string sceneName;
 
     bool pickedSubsequentNote = false;
-    
 
-    
-
+    public GameObject mann;
     public GameObject noteSecondCanvas;
+    public GameObject noteSecondCanvasLowRes;
     public GameObject noteThirdCanvas;
+    public GameObject noteThirdCanvasLowRes;
+    public GameObject rootObject;
 
 
     // Start is called before the first frame update
@@ -41,11 +43,11 @@ public class PickupNoteAdvScr : MonoBehaviour
     void Update()
     {
         //if(canpickup == true && Input.GetMouseButtonDown(0)) // if you enter thecollider of the objecct Input.GetKeyDown(KeyCode.N)
-                // canpickup = false;
-                // ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
-                // ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
-                // ObjectIwantToPickUp.transform.rotation = myHands.transform.rotation; // sets the position of the object to your hand position
-                // ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands  
+        // canpickup = false;
+        // ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
+        // ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
+        // ObjectIwantToPickUp.transform.rotation = myHands.transform.rotation; // sets the position of the object to your hand position
+        // ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands  
         //}
         // else if (canpickup == false && Input.GetMouseButtonDown(0))
         // {
@@ -60,8 +62,12 @@ public class PickupNoteAdvScr : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
-        if(other.gameObject.tag == "PickUpNote") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "PickUpNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
+            if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+            {
+                notesCanvasLowRes.SetActive(true);
+            }
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             //infoText.SetActive(true);
@@ -82,24 +88,31 @@ public class PickupNoteAdvScr : MonoBehaviour
             // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
             //     notesCanvas.SetActive(false);
             // }
-            if (fpsPlayer.GetComponent<PickupKeyScr>().firstKeyCollected) 
+            if (fpsPlayer.GetComponent<PickupKeyScr>().firstKeyCollected)
             {
-                Txt = GameObject.Find ("NoteText").GetComponent<Text> ();
-                if (sceneName == "HallsStart") {
+                Txt = GameObject.Find("NoteText").GetComponent<Text>();
+                if (sceneName == "HallsStart")
+                {
                     Txt.text = "Ron, \n \n Did you take my key? I can't find it anywhere. \n \n - Becky";
                 }
-            }            
+            }
 
 
         }
 
-        if(other.gameObject.tag == "PickUpSecondNote") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "PickUpSecondNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
+
+            if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+            {
+                noteSecondCanvasLowRes.SetActive(true);
+            }
+            mann.SetActive(true);
             pickedSubsequentNote = true;
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
-            //infoText.SetActive(true);
-            
+                                                    //infoText.SetActive(true);
+
             noteSecondCanvas.SetActive(true);
             //Txt = GameObject.Find ("SecondNoteText").GetComponent<Text> ();
             // if (sceneName == "HallsStart") {
@@ -113,25 +126,25 @@ public class PickupNoteAdvScr : MonoBehaviour
             // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
             // notesCanvas.SetActive(false);
             // }
-            if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected) 
+            if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
             {
-                Txt = GameObject.Find ("SecondNoteText").GetComponent<Text> ();
+                Txt = GameObject.Find("SecondNoteText").GetComponent<Text>();
                 Txt.text = "Becky, \n \n I can't seem to find my key anywhere at all. Been searching around. Have you got it?  \n \n - Ron";
-            }  
+            }
 
 
         }
 
         if (numNotes >= 3)
         {
-            if(other.gameObject.tag == "PickUpThirdNote") //on the object you want to pick up set the tag to be anything, in this case "object"
+            if (other.gameObject.tag == "PickUpThirdNote") //on the object you want to pick up set the tag to be anything, in this case "object"
             {
                 canpickup = true;  //set the pick up bool to true
                 ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
-                //infoText.SetActive(true);
-            
+                                                        //infoText.SetActive(true);
+
                 noteThirdCanvas.SetActive(true);
-                Txt = GameObject.Find ("ThirdNoteText").GetComponent<Text> ();
+                Txt = GameObject.Find("ThirdNoteText").GetComponent<Text>();
                 // if (sceneName == "HallsStart") {
                 //     Txt.text = "Becky, \n \n Retrieved the second key from the storage closet. Decided to leave the other key in room 54 and locked the door. Try to meet me in the main hall if you can. \n \n - Ron"; //+ Strength.ToString ();
                 // }
@@ -142,11 +155,11 @@ public class PickupNoteAdvScr : MonoBehaviour
                 // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
                 // notesCanvas.SetActive(false);
                 // }
-                if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected) 
+                if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
                 {
                     // Txt = GameObject.Find ("NoteText").GetComponent<Text> ();
                     // Txt.text = "Becky, \n \n I can't seem to find my key anywhere at all. Been searching around. Have you got it?  \n \n - Ron";
-                }  
+                }
 
 
             }
@@ -156,7 +169,7 @@ public class PickupNoteAdvScr : MonoBehaviour
         //     canpickup = true;  //set the pick up bool to true
         //     ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
         //     //infoText.SetActive(true);
-            
+
         //     noteThirdCanvas.SetActive(true);
         //     Txt = GameObject.Find ("ThirdNoteText").GetComponent<Text> ();
         //     // if (sceneName == "HallsStart") {
@@ -184,16 +197,19 @@ public class PickupNoteAdvScr : MonoBehaviour
         //infoText.SetActive(false);
         notesCanvas.SetActive(false);
         noteSecondCanvas.SetActive(false);
+        notesCanvasLowRes.SetActive(false);
+        noteSecondCanvasLowRes.SetActive(false);
+
 
         if (numNotes >= 3)
         {
             noteThirdCanvas.SetActive(false);
         }
-     
+
     }
 
     public void checkNotes()
-    {   
+    {
         if (activeCanvas)
         {
             activeCanvas = false;
