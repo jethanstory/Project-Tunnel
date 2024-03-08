@@ -18,17 +18,17 @@ public class GameOEvents : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartGame() 
+    public void StartGame()
     {
         //SceneManager.LoadScene("TestStartScene"); //SceneManager.LoadScene("Forest"); 
-        SceneManager.LoadScene("GameIntroTextScene"); //SceneManager.LoadScene("Forest"); 
+        SceneManager.LoadScene("ShortMap"); //SceneManager.LoadScene("Forest"); 
     }
 
-    public void MenuScene() 
+    public void MenuScene()
     {
         SceneManager.LoadScene("MainMenuStart"); //SceneManager.LoadScene("Forest"); 
     }
-    public void CreditsScene() 
+    public void CreditsScene()
     {
         SceneManager.LoadScene("CreditsScene"); //SceneManager.LoadScene("Forest"); 
     }
