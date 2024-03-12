@@ -63,7 +63,8 @@ public class WanderingEnemyAI : MonoBehaviour
         {
 
             GameObject.Find("WanderingEnemy").GetComponent<AdvancedWanderAI>().enabled = true;
-            gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            GameObject.Find("WanderingEnemy").GetComponent<FollowingEnemy>().enabled = false;
+            //gameObject.GetComponent<NavMeshAgent>().enabled = true;
             //Wander to player position
             //WandertoPlacePlease();
 
