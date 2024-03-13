@@ -30,7 +30,7 @@ public class BatteryIconScr : MonoBehaviour
 
     public bool bigSwap = false;
 
-    int maxBattCount = 1; //5
+    int maxBattCount = 4; //5
 
     public GameObject swapCanvas;
     public GameObject swapCameraCanvas;
@@ -47,8 +47,10 @@ public class BatteryIconScr : MonoBehaviour
     {
         if (hasBattery)
         {
-            BatteryCheck();
+            // BatteryCheck();
             // BatteryCheckTest();
+            BatteryCheckHalved();
+            // BatteryCheckQuartered();
         }
 
         if (isOut)
@@ -160,6 +162,125 @@ public class BatteryIconScr : MonoBehaviour
 
                                 StartBlinking();
                                 if (secondsCount >= 14)
+                                {
+                                    // StopBlinking();
+                                    StopAllCoroutines();
+
+                                    batteryZeroSix.SetActive(false);
+                                    recObject.SetActive(false);
+                                    lightObject.SetActive(false);
+                                    recDotObject.SetActive(false);
+                                    hasBattery = false;
+                                    isOut = true;
+                                    battCount++;
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    void BatteryCheckHalved()
+    {
+        secondsDown = 0;
+        secondsCount += Time.deltaTime;
+
+        if (secondsCount > 30)
+        {
+            batteryFull.SetActive(false);
+            batteryFiveSix.SetActive(true);
+            if (secondsCount >= 60)
+            {
+                batteryFiveSix.SetActive(false);
+                batteryFourSix.SetActive(true);
+                if (secondsCount >= 90)
+                {
+                    batteryFourSix.SetActive(false);
+                    batteryThreeSix.SetActive(true);
+                    if (secondsCount >= 120)
+                    {
+                        batteryThreeSix.SetActive(false);
+                        batteryTwoSix.SetActive(true);
+                        if (secondsCount >= 150)
+                        {
+                            batteryTwoSix.SetActive(false);
+                            batteryOneSix.SetActive(true);
+                            if (secondsCount >= 180)
+                            {
+                                batteryOneSix.SetActive(false);
+                                batteryZeroSix.SetActive(true);
+
+                                // recObject.SetActive(false);
+                                // recDotObject.SetActive(false);
+                                StopAllCoroutines();
+
+                                StartBlinking();
+                                if (secondsCount >= 210)
+                                {
+                                    // StopBlinking();
+                                    StopAllCoroutines();
+
+                                    batteryZeroSix.SetActive(false);
+                                    recObject.SetActive(false);
+                                    lightObject.SetActive(false);
+                                    recDotObject.SetActive(false);
+                                    hasBattery = false;
+                                    isOut = true;
+                                    battCount++;
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    void BatteryCheckQuartered()
+    {
+        secondsDown = 0;
+        secondsCount += Time.deltaTime;
+
+        if (secondsCount > 15)
+        {
+            batteryFull.SetActive(false);
+            batteryFiveSix.SetActive(true);
+            if (secondsCount >= 30)
+            {
+                batteryFiveSix.SetActive(false);
+                batteryFourSix.SetActive(true);
+                if (secondsCount >= 45)
+                {
+                    batteryFourSix.SetActive(false);
+                    batteryThreeSix.SetActive(true);
+                    if (secondsCount >= 60)
+                    {
+                        batteryThreeSix.SetActive(false);
+                        batteryTwoSix.SetActive(true);
+                        if (secondsCount >= 75)
+                        {
+                            batteryTwoSix.SetActive(false);
+                            batteryOneSix.SetActive(true);
+                            if (secondsCount >= 90)
+                            {
+                                batteryOneSix.SetActive(false);
+                                batteryZeroSix.SetActive(true);
+
+                                // recObject.SetActive(false);
+                                // recDotObject.SetActive(false);
+                                StopAllCoroutines();
+
+                                StartBlinking();
+                                if (secondsCount >= 105)
                                 {
                                     // StopBlinking();
                                     StopAllCoroutines();
