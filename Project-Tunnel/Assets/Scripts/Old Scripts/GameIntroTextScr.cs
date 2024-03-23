@@ -29,48 +29,101 @@ public class GameIntroTextScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // startTime += Time.deltaTime;
+        // introText.SetActive(true);
+        // if (startTime > 7)
+        // {
+        //     introText.SetActive(false);
+        //     introText2.SetActive(true);
+
+        //     if (startTime > 14)
+        //     {
+        //         introText2.SetActive(false);
+        //         introText3.SetActive(true);
+
+        //         if (startTime > 21)
+        //         {
+        //             introText3.SetActive(false);
+        //             introText4.SetActive(true);
+        //             if (startTime > 28)
+        //             {
+        //                 introText4.SetActive(false);
+        //                 introText5.SetActive(true);
+        //                 if (startTime > 35)
+        //                 {
+        //                     introText5.SetActive(false);
+        //                     introText6.SetActive(true);
+        //                     if (startTime > 42)
+        //                     {
+        //                         introText6.SetActive(false);
+        //                         introText7.SetActive(true);
+
+        //                         if (startTime > 49)
+        //                         {
+        //                             introText7.SetActive(true);
+        //                             //SceneManager.LoadScene("TestStartScene");
+        //                             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //                             checkEnd = true;
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+
         startTime += Time.deltaTime;
         introText.SetActive(true);
-        if (startTime > 7)
+        if (startTime > 3)
         {
-            introText.SetActive(false);
+            //introText.SetActive(false);
             introText2.SetActive(true);
 
-            if (startTime > 14)
+            if (startTime > 6)
             {
-                introText2.SetActive(false);
+                //introText2.SetActive(false);
                 introText3.SetActive(true);
 
-                if (startTime > 21)
+                if (startTime > 9)
                 {
+                    introText.SetActive(false);
+                    introText2.SetActive(false);
                     introText3.SetActive(false);
+                    // introText3.SetActive(false);
                     introText4.SetActive(true);
-                    if (startTime > 28)
-                    {
-                        introText4.SetActive(false);
-                        introText5.SetActive(true);
-                        if (startTime > 35)
-                        {
-                            introText5.SetActive(false);
-                            introText6.SetActive(true);
-                            if (startTime > 42)
-                            {
-                                introText6.SetActive(false);
-                                introText7.SetActive(true);
 
-                                if (startTime > 49)
-                                {
-                                    introText7.SetActive(true);
-                                    //SceneManager.LoadScene("TestStartScene");
-                                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                                    checkEnd = true;
-                                }
-                            }
-                        }
-                    }
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    checkEnd = true;
+                    // if (startTime > 28)
+                    // {
+                    // introText4.SetActive(false);
+                    // introText5.SetActive(true);
+                    // if (startTime > 35)
+                    // {
+                    //     introText5.SetActive(false);
+                    //     introText6.SetActive(true);
+                    //     if (startTime > 42)
+                    //     {
+                    //         introText6.SetActive(false);
+                    //         introText7.SetActive(true);
+
+                    //         if (startTime > 49)
+                    //         {
+                    //             introText7.SetActive(true);
+                    //             //SceneManager.LoadScene("TestStartScene");
+                    //             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    //             checkEnd = true;
+                    //         }
+                    //     }
+                    // }
+                    //  }
                 }
             }
         }
+
+
+
         if (checkEnd)
         {
             startTime = 0f;

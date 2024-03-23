@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 7dda2abe5dfd73446acd2c21799ae9ec
   - enabled: 1
+    path: Assets/Scenes/TextIntro.unity
+    guid: 35328d9232362e346b7464b69be1a5ab
+  - enabled: 1
     path: Assets/Scenes/ShortMap.unity
     guid: d675bb2fe6c92a940996a63fca508c9e
   m_configObjects: {}
