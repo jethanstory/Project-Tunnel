@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseScrean : MonoBehaviour
 {
- 
+
     public bool isPaused;
     public static bool CanMove = true;
     public GameObject crossHair;
@@ -14,20 +14,21 @@ public class PauseScrean : MonoBehaviour
     {
         Debug.Log("im on");
     }
- 
-// Update is called once per frame
-void Update()
+
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        // if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
- 
+
             if (isPaused == false)
             {
                 isPaused = true;
                 CanMove = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
             }
             else
             {

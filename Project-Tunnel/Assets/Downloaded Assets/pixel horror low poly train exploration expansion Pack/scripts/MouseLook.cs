@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform PlayerBody;
     float Xrot = 0f;
-   
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -17,12 +17,12 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        // }
         if (PauseScrean.CanMove == true)
         {
 
@@ -33,6 +33,6 @@ public class MouseLook : MonoBehaviour
             transform.localRotation = Quaternion.Euler(Xrot, 0f, 0f);
             PlayerBody.Rotate(Vector3.up * mousex);
         }
- 
+
     }
 }

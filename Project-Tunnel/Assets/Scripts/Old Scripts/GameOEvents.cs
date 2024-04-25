@@ -26,7 +26,7 @@ public class GameOEvents : MonoBehaviour
 
     public void MenuScene()
     {
-        SceneManager.LoadScene("MainMenuStart"); //SceneManager.LoadScene("Forest"); 
+        SceneManager.LoadScene("MainScene"); //SceneManager.LoadScene("Forest"); 
     }
     public void CreditsScene()
     {
