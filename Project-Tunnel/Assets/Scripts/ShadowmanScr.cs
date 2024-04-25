@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShadowmanScr : MonoBehaviour
 {
@@ -41,13 +42,14 @@ public class ShadowmanScr : MonoBehaviour
 
 
         }
-        if (other.gameObject.tag == "mannequin_03_test_Wander") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "KillMan") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             Cursor.lockState = CursorLockMode.None;
-            //SceneManager.LoadScene(2);
-            Debug.Log("HIT");
-            ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
-            Destroy(ObjectIwantToDestroy);
+            Cursor.visible = true;
+            SceneManager.LoadScene("DeadScreen");
+            // Debug.Log("HIT");
+            // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
+            // Destroy(ObjectIwantToDestroy);
             //shadow.SetActive(false);
 
 

@@ -9,6 +9,7 @@ TagManager:
   - Shadowman
   - PickUpSecondNote
   - DelayedShadowman
+  - KillMan
   layers:
   - Default
   - TransparentFX

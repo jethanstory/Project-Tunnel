@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShortMap.unity
     guid: d675bb2fe6c92a940996a63fca508c9e
+  - enabled: 1
+    path: Assets/Scenes/DeadScreen.unity
+    guid: 0e3b445a16d2b594f9d50cad9ca22788
   m_configObjects: {}
