@@ -23,6 +23,8 @@ public class GameIntroTextScr : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         checkEnd = false;
+        startTime = 0f;
+        Time.timeScale = 1;
         //SceneManager.LoadScene("MainZone");
     }
 
@@ -82,6 +84,7 @@ public class GameIntroTextScr : MonoBehaviour
 
             if (startTime > 6)
             {
+                Debug.Log("Hmm");
                 //introText2.SetActive(false);
                 introText3.SetActive(true);
 
@@ -132,14 +135,15 @@ public class GameIntroTextScr : MonoBehaviour
 
         if (Input.anyKey)
         {
-            introText7.SetActive(false);
-            introText6.SetActive(false);
-            introText5.SetActive(false);
-            introText4.SetActive(false);
+            // introText7.SetActive(false);
+            // introText6.SetActive(false);
+            // introText5.SetActive(false);
+            introText4.SetActive(true);
+            //introText4.SetActive(false);
             introText3.SetActive(false);
             introText2.SetActive(false);
             introText.SetActive(false);
-            introText8.SetActive(true);
+            // introText8.SetActive(true);
             //SceneManager.LoadScene("TestStartScene");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
