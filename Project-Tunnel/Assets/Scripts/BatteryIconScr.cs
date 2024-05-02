@@ -30,7 +30,7 @@ public class BatteryIconScr : MonoBehaviour
 
     public bool bigSwap = false;
 
-    int maxBattCount = 4; //5
+    int maxBattCount = 2; //5
 
     public GameObject swapCanvas;
     public GameObject swapCameraCanvas;
