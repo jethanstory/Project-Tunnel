@@ -5,11 +5,12 @@ using UnityEngine;
 public class FlashbackTestScr : MonoBehaviour
 {
     public GameObject ev;
+    public GameObject origin;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
@@ -29,12 +30,13 @@ public class FlashbackTestScr : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             ev.SetActive(false);
+            origin.SetActive(false);
         }
 
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
