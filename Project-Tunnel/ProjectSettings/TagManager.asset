@@ -11,6 +11,7 @@ TagManager:
   - DelayedShadowman
   - KillMan
   - HeadScare
+  - FlashbackTest
   layers:
   - Default
   - TransparentFX
