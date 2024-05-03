@@ -10,6 +10,7 @@ TagManager:
   - PickUpSecondNote
   - DelayedShadowman
   - KillMan
+  - HeadScare
   layers:
   - Default
   - TransparentFX
