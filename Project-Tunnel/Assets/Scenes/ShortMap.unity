@@ -246716,7 +246716,7 @@ MonoBehaviour:
   agent: {fileID: 2131270854}
   fpsTarget: {fileID: 0}
   player: {fileID: 785805704}
-  speed: 3
+  speed: 5
   walkRadius: 100
 --- !u!1001 &2131404689
 PrefabInstance:
