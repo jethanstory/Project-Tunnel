@@ -17,7 +17,7 @@ public class RotateLightScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(RandomSpeed());
+        // StartCoroutine(RandomSpeed());
 
         transform.Rotate(rotation * speed * Time.deltaTime);
     }

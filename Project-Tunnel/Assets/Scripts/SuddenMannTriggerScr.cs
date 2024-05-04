@@ -5,6 +5,8 @@ using UnityEngine;
 public class SuddenMannTriggerScr : MonoBehaviour
 {
     public GameObject mann;
+
+    public GameObject Sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,13 @@ public class SuddenMannTriggerScr : MonoBehaviour
     {
         if (other.gameObject.tag == "HeadScare") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            GameObject.Find("headMove").GetComponent<FollowingEnemy>().enabled = true;
+            // GameObject.Find("headMove").GetComponent<FollowingEnemy>().enabled = true;
+
+            GameObject.Find("mannequin_03_test_SuddenMove").GetComponent<FollowingEnemy>().enabled = true;
+            GameObject.Find("headMoveSudden").GetComponent<RotateLightScr>().enabled = true;
             Cursor.lockState = CursorLockMode.None;
+
+            Sound.SetActive(true);
             //SceneManager.LoadScene(2);
             Debug.Log("HIT");
             // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
