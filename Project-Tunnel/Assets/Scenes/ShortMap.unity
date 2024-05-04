@@ -46483,10 +46483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -165349,7 +165349,7 @@ Transform:
   m_Children:
   - {fileID: 1814718194}
   m_Father: {fileID: 1657937347}
-  m_RootOrder: 285
+  m_RootOrder: 273
   m_LocalEulerAnglesHint: {x: 0, y: -90.23, z: 0}
 --- !u!1001 &1442321738
 PrefabInstance:
@@ -191080,6 +191080,7 @@ Transform:
   - {fileID: 1123148137}
   - {fileID: 1232558537}
   - {fileID: 986484912}
+  - {fileID: 1441255726}
   - {fileID: 136282648}
   - {fileID: 1560521809}
   - {fileID: 1200569104}
@@ -191092,7 +191093,6 @@ Transform:
   - {fileID: 1059776692}
   - {fileID: 2094479564}
   - {fileID: 1022253404}
-  - {fileID: 1441255726}
   - {fileID: 121235490}
   - {fileID: 1518223767}
   - {fileID: 1503976047}
