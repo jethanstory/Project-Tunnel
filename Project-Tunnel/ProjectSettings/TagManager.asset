@@ -13,6 +13,8 @@ TagManager:
   - HeadScare
   - FlashbackTest
   - RustyKnifeHint
+  - CrateCrowbarHint
+  - RustyKnifePickup
   layers:
   - Default
   - TransparentFX
