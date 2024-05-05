@@ -26,6 +26,8 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject origCrate;
     public GameObject animatedCrate;
 
+    public float secondsCount = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +45,25 @@ public class ObjectHintsScr : MonoBehaviour
             // Debug.Log("This shit works");
             if (crowbarCheck)
             {
-                origCrate.SetActive(false);
-                animatedCrate.SetActive(true);
+                secondsCount += Time.deltaTime;
                 animatedCrowbar.SetActive(true);
-                animCrow.clip = pry;
-                animCrow.Play();
-                animLid.clip = open;
-                animLid.Play();
+                // animCrow.clip = pry;
+                // animCrow.Play();
+
+                if (secondsCount > 0.3)
+                {
+                    origCrate.SetActive(false);
+                    animatedCrate.SetActive(true);
+                    // animLid.clip = open;
+                    // animLid.Play();
+                }
+
+                if (secondsCount > 1.3)
+                {
+                    //animatedCrate.SetActive(false);
+                    animatedCrowbar.SetActive(false);
+                }
+                
 
                 // animatedCrowbar.SetActive(false);
 
