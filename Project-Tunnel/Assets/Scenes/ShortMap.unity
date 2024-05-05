@@ -253935,6 +253935,7 @@ MonoBehaviour:
   animatedLid: {fileID: 1505527225}
   origCrate: {fileID: 2136251332}
   animatedCrate: {fileID: 1830983668}
+  secondsCount: 0
 --- !u!114 &7310637226131035666
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class ObjectHintsScr : MonoBehaviour
                 // animCrow.clip = pry;
                 // animCrow.Play();
 
-                if (secondsCount > 0.3)
+                if (secondsCount > 1)
                 {
                     origCrate.SetActive(false);
                     animatedCrate.SetActive(true);
@@ -58,7 +58,7 @@ public class ObjectHintsScr : MonoBehaviour
                     // animLid.Play();
                 }
 
-                if (secondsCount > 1.3)
+                if (secondsCount > 2.6)
                 {
                     //animatedCrate.SetActive(false);
                     animatedCrowbar.SetActive(false);
@@ -68,6 +68,8 @@ public class ObjectHintsScr : MonoBehaviour
                 // animatedCrowbar.SetActive(false);
 
             }
+            else
+                crateCrowbar.SetActive(true);
         }
     }
 
@@ -81,7 +83,7 @@ public class ObjectHintsScr : MonoBehaviour
         
         if(other.gameObject.tag == "CrateCrowbarHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            crateCrowbar.SetActive(true);
+            
             inCrateArea = true;
 
         }
