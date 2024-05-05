@@ -104,7 +104,6 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             allenKeyPickup = true;
             keySound.SetActive(false);
             keySound.SetActive(true);
-            rustyKnifePickupNotification.SetActive(true);
         }
         
         if(other.gameObject.tag == "RustyKnifePickup") //on the object you want to pick up set the tag to be anything, in this case "object"

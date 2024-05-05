@@ -15,6 +15,7 @@ TagManager:
   - RustyKnifeHint
   - CrateCrowbarHint
   - RustyKnifePickup
+  - AllenKeyPickup
   layers:
   - Default
   - TransparentFX
