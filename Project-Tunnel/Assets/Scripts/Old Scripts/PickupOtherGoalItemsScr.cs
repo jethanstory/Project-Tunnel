@@ -30,6 +30,11 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
     public float secondsCount = 0;
 
+    bool rustyShown;
+    bool allenShown;
+    
+    bool crowbarShown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +44,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rustyKnifePickup)
+        if (rustyKnifePickup && !rustyShown)
         {
             secondsCount += Time.deltaTime;
             rustyKnifePickupNotification.SetActive(true);
@@ -47,6 +52,8 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             if (secondsCount > 2) 
             {
                 rustyKnifePickupNotification.SetActive(false);
+                rustyShown = true;
+
                 //endTime = true;
                 //secondsCount = 100;
                 // textGoal.SetActive(true);
@@ -57,7 +64,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             }
         }
 
-        if (crateCrowbarPickup)
+        if (crateCrowbarPickup && !crowbarShown)
         {
             secondsCount += Time.deltaTime;
             crateCrowbarPickupNotification.SetActive(true);
@@ -65,6 +72,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             if (secondsCount > 2) 
             {
                 crateCrowbarPickupNotification.SetActive(false);
+                crowbarShown = true;
                 //endTime = true;
                 //secondsCount = 100;
                 // textGoal.SetActive(true);
@@ -74,7 +82,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
                 // }
             }
         }
-        if (allenKeyPickup)
+        if (allenKeyPickup && !allenShown)
         {
             secondsCount += Time.deltaTime;
             allenKeyPickupNotification.SetActive(true);
@@ -82,6 +90,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             if (secondsCount > 2) 
             {
                 allenKeyPickupNotification.SetActive(false);
+                allenShown = true;
                 //endTime = true;
                 //secondsCount = 100;
                 // textGoal.SetActive(true);
