@@ -12,6 +12,7 @@ TagManager:
   - KillMan
   - HeadScare
   - FlashbackTest
+  - RustyKnifeHint
   layers:
   - Default
   - TransparentFX
