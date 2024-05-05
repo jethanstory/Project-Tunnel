@@ -36,6 +36,8 @@ public class ObjectHintsScr : MonoBehaviour
 
     public GameObject animatedLocker;
 
+    public GameObject actualLockerCrowbar;
+
     public float secondsCount = 0f;
 
 
@@ -95,6 +97,7 @@ public class ObjectHintsScr : MonoBehaviour
                 animatedKnife.SetActive(true);
                 if (secondsCount > 1)
                 {
+                    actualLockerCrowbar.SetActive(true);
                     origLocker.SetActive(false);
                     animatedLocker.SetActive(true);
                     // animLid.clip = open;
@@ -110,7 +113,7 @@ public class ObjectHintsScr : MonoBehaviour
             }
             else
             {
-                crateCrowbar.SetActive(true);
+                rustyHint.SetActive(true);
                 secondsCount = 0;
             }
         }
@@ -121,18 +124,21 @@ public class ObjectHintsScr : MonoBehaviour
     {
         if (other.gameObject.tag == "RustyKnifeHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            rustyHint.SetActive(true);
+            inLockerArea = true;
+            secondsCount = 0;
         }
 
         if (other.gameObject.tag == "CrateCrowbarHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
 
             inCrateArea = true;
+            secondsCount = 0;
 
         }
         if (other.gameObject.tag == "allenKeyHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             allenKey.SetActive(true);
+            secondsCount = 0;
         }
     }
     private void OnTriggerExit(Collider other)
