@@ -83,7 +83,6 @@ public class ObjectHintsScr : MonoBehaviour
             else
             {
                 crateCrowbar.SetActive(true);
-                secondsCount = 0;
             }
         }
 
@@ -114,7 +113,6 @@ public class ObjectHintsScr : MonoBehaviour
             else
             {
                 rustyHint.SetActive(true);
-                secondsCount = 0;
             }
         }
     }
@@ -138,7 +136,6 @@ public class ObjectHintsScr : MonoBehaviour
         if (other.gameObject.tag == "allenKeyHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             allenKey.SetActive(true);
-            secondsCount = 0;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -146,5 +143,8 @@ public class ObjectHintsScr : MonoBehaviour
         rustyHint.SetActive(false);
         crateCrowbar.SetActive(false);
         allenKey.SetActive(false);
+        inLockerArea = false;
+        inCrateArea = false;
+
     }
 }
