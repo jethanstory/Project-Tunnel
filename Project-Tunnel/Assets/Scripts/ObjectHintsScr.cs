@@ -11,11 +11,15 @@ public class ObjectHintsScr : MonoBehaviour
 
     bool inCrateArea;
 
+    bool inLockerArea;
+
     public bool crowbarCheck = true;
+
+    public bool knifeCheck = true;
 
     public GameObject animatedCrowbar;
 
-    
+
 
     public AnimationClip pry;
     public AnimationClip open;
@@ -24,7 +28,13 @@ public class ObjectHintsScr : MonoBehaviour
 
     public GameObject animatedLid;
     public GameObject origCrate;
+
+    public GameObject origLocker;
     public GameObject animatedCrate;
+
+    public GameObject animatedKnife;
+
+    public GameObject animatedLocker;
 
     public float secondsCount = 0f;
 
@@ -63,37 +73,70 @@ public class ObjectHintsScr : MonoBehaviour
                     //animatedCrate.SetActive(false);
                     animatedCrowbar.SetActive(false);
                 }
-                
+
 
                 // animatedCrowbar.SetActive(false);
 
             }
             else
+            {
                 crateCrowbar.SetActive(true);
+                secondsCount = 0;
+            }
+        }
+
+
+        if (inLockerArea)
+        {
+            // Debug.Log("This shit works");
+            if (knifeCheck)
+            {
+                secondsCount += Time.deltaTime;
+                animatedKnife.SetActive(true);
+                if (secondsCount > 1)
+                {
+                    origLocker.SetActive(false);
+                    animatedLocker.SetActive(true);
+                    // animLid.clip = open;
+                    // animLid.Play();
+                }
+
+                if (secondsCount > 2.6)
+                {
+                    //animatedCrate.SetActive(false);
+                    animatedKnife.SetActive(false);
+                }
+
+            }
+            else
+            {
+                crateCrowbar.SetActive(true);
+                secondsCount = 0;
+            }
         }
     }
 
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
-        if(other.gameObject.tag == "RustyKnifeHint") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "RustyKnifeHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             rustyHint.SetActive(true);
         }
-        
-        if(other.gameObject.tag == "CrateCrowbarHint") //on the object you want to pick up set the tag to be anything, in this case "object"
+
+        if (other.gameObject.tag == "CrateCrowbarHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            
+
             inCrateArea = true;
 
         }
-        if(other.gameObject.tag == "allenKeyHint") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "allenKeyHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             allenKey.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
-    {   
+    {
         rustyHint.SetActive(false);
         crateCrowbar.SetActive(false);
         allenKey.SetActive(false);
