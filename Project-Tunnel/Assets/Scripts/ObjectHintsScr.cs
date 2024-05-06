@@ -8,7 +8,6 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject rustyHint;
     public GameObject crateCrowbar;
     public GameObject allenKey;
-
     public GameObject flimsySaw;
 
     bool inCrateArea;
@@ -36,6 +35,8 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject origCrate;
     public GameObject origLocker;
     public GameObject origOfficeDoor;
+    public GameObject origGrate;
+    public GameObject animatedGrate;
     public GameObject animatedOfficeDoor;
     public GameObject animatedCrate;
     public GameObject animatedKnife;
@@ -53,6 +54,7 @@ public class ObjectHintsScr : MonoBehaviour
     bool sawHasPlayed;
     bool crowHasPlayed;
     bool knifeHasPlayed;
+    bool AllenHasPlayed;
 
 
     // Start is called before the first frame update
@@ -182,6 +184,36 @@ public class ObjectHintsScr : MonoBehaviour
                 flimsySaw.SetActive(true);
             }
         }
+
+        if (inAllenGrateArea && !AllenHasPlayed)
+        {
+            // Debug.Log("This shit works");
+            if (allenCheck)
+            {
+                secondsCount += Time.deltaTime;
+                animatedSaw.SetActive(true);
+                if (secondsCount > 1.8)
+                {
+                    origOfficeDoor.SetActive(false);
+                    animatedOfficeDoor.SetActive(true);
+                    // animLid.clip = open;
+                    // animLid.Play();
+                }
+
+                if (secondsCount > 2.6)
+                {
+                    //animatedCrate.SetActive(false);
+                    animatedSaw.SetActive(false);
+                    sawCheck = false;
+                    sawHasPlayed = true;
+                }
+
+            }
+            else if (!sawHasPlayed)
+            {
+                flimsySaw.SetActive(true);
+            }
+        }
     }
 
 
@@ -200,7 +232,7 @@ public class ObjectHintsScr : MonoBehaviour
             secondsCount = 0;
 
         }
-        if (other.gameObject.tag == "allenKeyHint") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "AllenKeyGrateHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             allenKey.SetActive(true);
         }

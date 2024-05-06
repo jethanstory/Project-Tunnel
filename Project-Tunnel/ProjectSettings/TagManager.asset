@@ -23,6 +23,7 @@ TagManager:
   - PickUpOfficeNote
   - OfficeKeyPickup
   - SmallStationDoorHint
+  - AllenKeyGrateHint
   layers:
   - Default
   - TransparentFX
