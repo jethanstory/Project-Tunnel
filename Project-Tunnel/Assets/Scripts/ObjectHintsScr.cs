@@ -9,22 +9,28 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject crateCrowbar;
     public GameObject allenKey;
 
+    public GameObject flimsySaw;
+
     bool inCrateArea;
 
     bool inLockerArea;
+
+    bool inSawDoorArea;
 
     public bool crowbarCheck;
 
     public bool knifeCheck;
 
+    public bool sawCheck;
+
     public GameObject animatedCrowbar;
 
 
 
-    public AnimationClip pry;
-    public AnimationClip open;
-    public Animation animCrow;
-    public Animation animLid;
+    // public AnimationClip pry;
+    // public AnimationClip open;
+    // public Animation animCrow;
+    // public Animation animLid;
 
     public GameObject animatedLid;
     public GameObject origCrate;
@@ -36,7 +42,11 @@ public class ObjectHintsScr : MonoBehaviour
 
     public GameObject animatedLocker;
 
+    public GameObject animatedSaw;
+
     public GameObject actualLockerCrowbar;
+
+    public GameObject actualFlimsySaw;
 
     public float secondsCount = 0f;
 
@@ -85,9 +95,12 @@ public class ObjectHintsScr : MonoBehaviour
 
                 if (secondsCount > 2.6)
                 {
+
+                    actualFlimsySaw.SetActive(true);
                     //animatedCrate.SetActive(false);
                     animatedCrowbar.SetActive(false);
                     crowbarCheck = false;
+                    // sawPickup.SetActive(true);
                 }
 
 
@@ -105,6 +118,36 @@ public class ObjectHintsScr : MonoBehaviour
         {
             // Debug.Log("This shit works");
             if (knifeCheck)
+            {
+                secondsCount += Time.deltaTime;
+                animatedKnife.SetActive(true);
+                if (secondsCount > 1)
+                {
+                    actualLockerCrowbar.SetActive(true);
+                    origLocker.SetActive(false);
+                    animatedLocker.SetActive(true);
+                    // animLid.clip = open;
+                    // animLid.Play();
+                }
+
+                if (secondsCount > 2.6)
+                {
+                    //animatedCrate.SetActive(false);
+                    animatedKnife.SetActive(false);
+                    knifeCheck = false;
+                }
+
+            }
+            else
+            {
+                rustyHint.SetActive(true);
+            }
+        }
+
+        if (inSawDoorArea)
+        {
+            // Debug.Log("This shit works");
+            if (sawCheck)
             {
                 secondsCount += Time.deltaTime;
                 animatedKnife.SetActive(true);
@@ -152,6 +195,11 @@ public class ObjectHintsScr : MonoBehaviour
         {
             allenKey.SetActive(true);
         }
+        if (other.gameObject.tag == "SawDoorHint") //on the object you want to pick up set the tag to be anything, in this case "object"
+        {
+            inSawDoorArea = true;
+            secondsCount = 0;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -160,6 +208,7 @@ public class ObjectHintsScr : MonoBehaviour
         allenKey.SetActive(false);
         inLockerArea = false;
         inCrateArea = false;
+        // sawPickup.SetActive(false);
 
     }
 }

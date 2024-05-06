@@ -14,6 +14,8 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     public bool crateCrowbarPickup;
     public bool allenKeyPickup;
 
+    public bool flimsySawPickup;
+
     public bool oldCam;
 
     public GameObject rustyKnifePickupNotification;
@@ -21,6 +23,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     public GameObject crateCrowbarPickupNotification;
 
     public GameObject allenKeyPickupNotification;
+    public GameObject flimsySawPickupNotification;
 
     public GameObject rustyKnifePickupNotificationOldCam;
 
@@ -28,10 +31,14 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
     public GameObject allenKeyPickupNotificationOldCam;
 
+    public GameObject flimsySawPickupNotificationOldCam;
+
     public float secondsCount = 0;
 
     bool rustyShown;
     bool allenShown;
+
+    bool sawShown;
 
     bool crowbarShown;
 
@@ -100,6 +107,25 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
                 // }
             }
         }
+
+        if (flimsySawPickup && !sawShown)
+        {
+            secondsCount += Time.deltaTime;
+            flimsySawPickupNotification.SetActive(true);
+
+            if (secondsCount > 2)
+            {
+                flimsySawPickupNotification.SetActive(false);
+                sawShown = true;
+                //endTime = true;
+                //secondsCount = 100;
+                // textGoal.SetActive(true);
+                // if (secondsCount > 10)
+                // {
+                //     textGoal.SetActive(false);
+                // }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
@@ -132,6 +158,16 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
             crateCrowbarPickup = true;
+            keySound.SetActive(false);
+            keySound.SetActive(true);
+        }
+        if (other.gameObject.tag == "FlimsySawPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
+        {
+            secondsCount = 0;
+            canpickup = true;  //set the pick up bool to true
+            ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
+            Destroy(ObjectIwantToDestroy);
+            flimsySawPickup = true;
             keySound.SetActive(false);
             keySound.SetActive(true);
         }

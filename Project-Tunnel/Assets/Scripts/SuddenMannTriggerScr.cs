@@ -6,13 +6,17 @@ public class SuddenMannTriggerScr : MonoBehaviour
 {
     public GameObject mann;
 
+    bool isTriggered;
+
+    float secondsCount = 0f;
+
     public GameObject Sound;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-    
+
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
@@ -27,7 +31,7 @@ public class SuddenMannTriggerScr : MonoBehaviour
 
 
         // }
-
+        secondsCount = 0;
     }
 
     private void OnTriggerExit(Collider other)
@@ -43,6 +47,8 @@ public class SuddenMannTriggerScr : MonoBehaviour
             Sound.SetActive(true);
             //SceneManager.LoadScene(2);
             Debug.Log("HIT");
+
+            isTriggered = true;
             // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             // Destroy(ObjectIwantToDestroy);
 
@@ -57,6 +63,14 @@ public class SuddenMannTriggerScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isTriggered)
+        {
+            secondsCount += Time.deltaTime;
+            if (secondsCount > 5)
+            {
+                mann.SetActive(false);
+            }
+
+        }
     }
 }

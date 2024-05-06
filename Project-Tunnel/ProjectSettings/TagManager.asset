@@ -17,6 +17,8 @@ TagManager:
   - RustyKnifePickup
   - AllenKeyPickup
   - CrowbarPickup
+  - SawDoorHint
+  - FlimsySawPickup
   layers:
   - Default
   - TransparentFX
