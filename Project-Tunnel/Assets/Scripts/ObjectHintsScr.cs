@@ -34,14 +34,12 @@ public class ObjectHintsScr : MonoBehaviour
 
     public GameObject animatedLid;
     public GameObject origCrate;
-
     public GameObject origLocker;
+    public GameObject origOfficeDoor;
+    public GameObject animatedOfficeDoor;
     public GameObject animatedCrate;
-
     public GameObject animatedKnife;
-
     public GameObject animatedLocker;
-
     public GameObject animatedSaw;
 
     public GameObject actualLockerCrowbar;
@@ -57,8 +55,8 @@ public class ObjectHintsScr : MonoBehaviour
     void Start()
     {
         //anim = GetComponent<Animation>();
-        animCrow = animatedCrowbar.GetComponent<Animation>();
-        animLid = animatedLid.GetComponent<Animation>();
+        // animCrow = animatedCrowbar.GetComponent<Animation>();
+        // animLid = animatedLid.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -73,6 +71,11 @@ public class ObjectHintsScr : MonoBehaviour
         if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().crateCrowbarPickup)
         {
             crowbarCheck = true;
+        }
+
+        if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().flimsySawPickup)
+        {
+            sawCheck = true;
         }
 
         if (inCrateArea)
@@ -150,12 +153,11 @@ public class ObjectHintsScr : MonoBehaviour
             if (sawCheck)
             {
                 secondsCount += Time.deltaTime;
-                animatedKnife.SetActive(true);
-                if (secondsCount > 1)
+                animatedSaw.SetActive(true);
+                if (secondsCount > 1.8)
                 {
-                    actualLockerCrowbar.SetActive(true);
-                    origLocker.SetActive(false);
-                    animatedLocker.SetActive(true);
+                    origOfficeDoor.SetActive(false);
+                    animatedOfficeDoor.SetActive(true);
                     // animLid.clip = open;
                     // animLid.Play();
                 }
@@ -163,14 +165,14 @@ public class ObjectHintsScr : MonoBehaviour
                 if (secondsCount > 2.6)
                 {
                     //animatedCrate.SetActive(false);
-                    animatedKnife.SetActive(false);
-                    knifeCheck = false;
+                    animatedSaw.SetActive(false);
+                    sawCheck = false;
                 }
 
             }
             else
             {
-                rustyHint.SetActive(true);
+                flimsySaw.SetActive(true);
             }
         }
     }
@@ -206,8 +208,10 @@ public class ObjectHintsScr : MonoBehaviour
         rustyHint.SetActive(false);
         crateCrowbar.SetActive(false);
         allenKey.SetActive(false);
+        flimsySaw.SetActive(false);
         inLockerArea = false;
         inCrateArea = false;
+        inSawDoorArea = false;
         // sawPickup.SetActive(false);
 
     }
