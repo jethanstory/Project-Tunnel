@@ -11,16 +11,14 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject flimsySaw;
 
     bool inCrateArea;
-
     bool inLockerArea;
-
     bool inSawDoorArea;
+    bool inAllenGrateArea;
 
     public bool crowbarCheck;
-
     public bool knifeCheck;
-
     public bool sawCheck;
+    public bool allenCheck;
 
     public GameObject animatedCrowbar;
 
@@ -37,6 +35,7 @@ public class ObjectHintsScr : MonoBehaviour
     public GameObject origOfficeDoor;
     public GameObject origGrate;
     public GameObject animatedGrate;
+    public GameObject animatedAllen;
     public GameObject animatedOfficeDoor;
     public GameObject animatedCrate;
     public GameObject animatedKnife;
@@ -82,6 +81,11 @@ public class ObjectHintsScr : MonoBehaviour
         if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().flimsySawPickup)
         {
             sawCheck = true;
+        }
+
+        if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().allenKeyPickup)
+        {
+            allenCheck = true;
         }
 
         if (inCrateArea)
@@ -191,11 +195,11 @@ public class ObjectHintsScr : MonoBehaviour
             if (allenCheck)
             {
                 secondsCount += Time.deltaTime;
-                animatedSaw.SetActive(true);
+                animatedAllen.SetActive(true);
                 if (secondsCount > 1.8)
                 {
-                    origOfficeDoor.SetActive(false);
-                    animatedOfficeDoor.SetActive(true);
+                    origGrate.SetActive(false);
+                    animatedGrate.SetActive(true);
                     // animLid.clip = open;
                     // animLid.Play();
                 }
@@ -203,15 +207,15 @@ public class ObjectHintsScr : MonoBehaviour
                 if (secondsCount > 2.6)
                 {
                     //animatedCrate.SetActive(false);
-                    animatedSaw.SetActive(false);
-                    sawCheck = false;
-                    sawHasPlayed = true;
+                    animatedAllen.SetActive(false);
+                    allenCheck = false;
+                    AllenHasPlayed = true;
                 }
 
             }
-            else if (!sawHasPlayed)
+            else if (!AllenHasPlayed)
             {
-                flimsySaw.SetActive(true);
+                allenKey.SetActive(true);
             }
         }
     }
@@ -234,7 +238,8 @@ public class ObjectHintsScr : MonoBehaviour
         }
         if (other.gameObject.tag == "AllenKeyGrateHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            allenKey.SetActive(true);
+            inAllenGrateArea = true;
+            secondsCount = 0;
         }
         if (other.gameObject.tag == "SawDoorHint") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
