@@ -19,6 +19,8 @@ TagManager:
   - CrowbarPickup
   - SawDoorHint
   - FlimsySawPickup
+  - PickUpMaintNote
+  - PickUpOfficeNote
   layers:
   - Default
   - TransparentFX
