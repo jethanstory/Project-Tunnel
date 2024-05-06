@@ -21,6 +21,8 @@ TagManager:
   - FlimsySawPickup
   - PickUpMaintNote
   - PickUpOfficeNote
+  - OfficeKeyPickup
+  - SmallStationDoorHint
   layers:
   - Default
   - TransparentFX
