@@ -32,7 +32,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
     bool rustyShown;
     bool allenShown;
-    
+
     bool crowbarShown;
 
     // Start is called before the first frame update
@@ -49,7 +49,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             secondsCount += Time.deltaTime;
             rustyKnifePickupNotification.SetActive(true);
 
-            if (secondsCount > 2) 
+            if (secondsCount > 2)
             {
                 rustyKnifePickupNotification.SetActive(false);
                 rustyShown = true;
@@ -69,7 +69,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             secondsCount += Time.deltaTime;
             crateCrowbarPickupNotification.SetActive(true);
 
-            if (secondsCount > 2) 
+            if (secondsCount > 2)
             {
                 crateCrowbarPickupNotification.SetActive(false);
                 crowbarShown = true;
@@ -87,7 +87,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             secondsCount += Time.deltaTime;
             allenKeyPickupNotification.SetActive(true);
 
-            if (secondsCount > 2) 
+            if (secondsCount > 2)
             {
                 allenKeyPickupNotification.SetActive(false);
                 allenShown = true;
@@ -104,7 +104,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
-        if(other.gameObject.tag == "AllenKeyPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "AllenKeyPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
             canpickup = true;  //set the pick up bool to true
@@ -114,8 +114,8 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             keySound.SetActive(false);
             keySound.SetActive(true);
         }
-        
-        if(other.gameObject.tag == "RustyKnifePickup") //on the object you want to pick up set the tag to be anything, in this case "object"
+
+        if (other.gameObject.tag == "RustyKnifePickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
             canpickup = true;  //set the pick up bool to true
@@ -125,7 +125,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
             keySound.SetActive(false);
             keySound.SetActive(true);
         }
-        if(other.gameObject.tag == "CrateCrowbarPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if (other.gameObject.tag == "CrowbarPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
             canpickup = true;  //set the pick up bool to true
@@ -139,6 +139,6 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canpickup = false; //when you leave the collider set the canpickup bool to false
-     
+
     }
 }

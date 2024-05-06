@@ -16,6 +16,7 @@ TagManager:
   - CrateCrowbarHint
   - RustyKnifePickup
   - AllenKeyPickup
+  - CrowbarPickup
   layers:
   - Default
   - TransparentFX

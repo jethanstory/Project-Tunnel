@@ -13,9 +13,9 @@ public class ObjectHintsScr : MonoBehaviour
 
     bool inLockerArea;
 
-    public bool crowbarCheck = true;
+    public bool crowbarCheck;
 
-    public bool knifeCheck = true;
+    public bool knifeCheck;
 
     public GameObject animatedCrowbar;
 
@@ -40,6 +40,8 @@ public class ObjectHintsScr : MonoBehaviour
 
     public float secondsCount = 0f;
 
+    public GameObject fpsPlayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,17 @@ public class ObjectHintsScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().rustyKnifePickup)
+        {
+            knifeCheck = true;
+        }
+
+        if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().crateCrowbarPickup)
+        {
+            crowbarCheck = true;
+        }
+
         if (inCrateArea)
         {
             // Debug.Log("This shit works");
@@ -74,6 +87,7 @@ public class ObjectHintsScr : MonoBehaviour
                 {
                     //animatedCrate.SetActive(false);
                     animatedCrowbar.SetActive(false);
+                    crowbarCheck = false;
                 }
 
 
@@ -107,6 +121,7 @@ public class ObjectHintsScr : MonoBehaviour
                 {
                     //animatedCrate.SetActive(false);
                     animatedKnife.SetActive(false);
+                    knifeCheck = false;
                 }
 
             }

@@ -160162,7 +160162,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1499985523}
     m_Modifications:
     - target: {fileID: 133556, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_Name
@@ -160170,31 +160170,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133556, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133556, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
+      propertyPath: m_TagString
+      value: CrowbarPickup
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 413.594
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.817
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 137.582
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalRotation.y
@@ -160202,7 +160206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 451588, guid: 1f41ca70e984b46bbbbafd2ba9561d11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -174780,6 +174784,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ee345d24eb6143044804017bf331aa8a, type: 3}
   m_PrefabInstance: {fileID: 1627787891}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1499985522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499985523}
+  m_Layer: 0
+  m_Name: CrowbarOriginAspect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1499985523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499985522}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 413.594, y: -1.817, z: 137.582}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1371158687}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1500097736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254425,8 +254461,8 @@ MonoBehaviour:
   rustyHint: {fileID: 527761710}
   crateCrowbar: {fileID: 944469342}
   allenKey: {fileID: 617370047}
-  crowbarCheck: 1
-  knifeCheck: 1
+  crowbarCheck: 0
+  knifeCheck: 0
   animatedCrowbar: {fileID: 851396584}
   pry: {fileID: 7400000, guid: 5e34e14a26ad2904ab5ce2410bd67e2f, type: 2}
   open: {fileID: 7400000, guid: c70db41c0082f2a49b9f3bea8725d11a, type: 2}
@@ -254438,8 +254474,9 @@ MonoBehaviour:
   animatedCrate: {fileID: 1830983668}
   animatedKnife: {fileID: 1062723734}
   animatedLocker: {fileID: 1504180016}
-  actualLockerCrowbar: {fileID: 542651469}
+  actualLockerCrowbar: {fileID: 1499985522}
   secondsCount: 0
+  fpsPlayer: {fileID: 5524303682492047328}
 --- !u!114 &7310637226131035666
 MonoBehaviour:
   m_ObjectHideFlags: 0
