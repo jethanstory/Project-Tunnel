@@ -50,6 +50,10 @@ public class ObjectHintsScr : MonoBehaviour
 
     public GameObject fpsPlayer;
 
+    bool sawHasPlayed;
+    bool crowHasPlayed;
+    bool knifeHasPlayed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +85,7 @@ public class ObjectHintsScr : MonoBehaviour
         if (inCrateArea)
         {
             // Debug.Log("This shit works");
-            if (crowbarCheck)
+            if (crowbarCheck && !crowHasPlayed)
             {
                 secondsCount += Time.deltaTime;
                 animatedCrowbar.SetActive(true);
@@ -103,6 +107,7 @@ public class ObjectHintsScr : MonoBehaviour
                     //animatedCrate.SetActive(false);
                     animatedCrowbar.SetActive(false);
                     crowbarCheck = false;
+                    crowHasPlayed = true;
                     // sawPickup.SetActive(true);
                 }
 
@@ -110,7 +115,7 @@ public class ObjectHintsScr : MonoBehaviour
                 // animatedCrowbar.SetActive(false);
 
             }
-            else
+            else if (!crowHasPlayed)
             {
                 crateCrowbar.SetActive(true);
             }
@@ -120,7 +125,7 @@ public class ObjectHintsScr : MonoBehaviour
         if (inLockerArea)
         {
             // Debug.Log("This shit works");
-            if (knifeCheck)
+            if (knifeCheck && !knifeHasPlayed)
             {
                 secondsCount += Time.deltaTime;
                 animatedKnife.SetActive(true);
@@ -138,16 +143,17 @@ public class ObjectHintsScr : MonoBehaviour
                     //animatedCrate.SetActive(false);
                     animatedKnife.SetActive(false);
                     knifeCheck = false;
+                    knifeHasPlayed = true;
                 }
 
             }
-            else
+            else if (!knifeHasPlayed)
             {
                 rustyHint.SetActive(true);
             }
         }
 
-        if (inSawDoorArea)
+        if (inSawDoorArea && !sawHasPlayed)
         {
             // Debug.Log("This shit works");
             if (sawCheck)
@@ -167,10 +173,11 @@ public class ObjectHintsScr : MonoBehaviour
                     //animatedCrate.SetActive(false);
                     animatedSaw.SetActive(false);
                     sawCheck = false;
+                    sawHasPlayed = true;
                 }
 
             }
-            else
+            else if (!sawHasPlayed)
             {
                 flimsySaw.SetActive(true);
             }
