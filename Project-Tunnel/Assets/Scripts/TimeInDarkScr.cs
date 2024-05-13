@@ -8,7 +8,7 @@ public class TimeInDarkScr : MonoBehaviour
     public float totalTime;
     public GameObject scareObject;
     public Transform spawnPoint;
-    public bool canSpawn = false;
+    public bool canSpawnStaticHaluc = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class TimeInDarkScr : MonoBehaviour
 
         if (totalTime > 30 && totalTime < 30.1)
         {
-            canSpawn = true;
+            canSpawnStaticHaluc = true;
         }
         SpawnAspect();
     }
