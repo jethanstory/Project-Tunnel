@@ -26,7 +26,7 @@ public class TimeInDarkScr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -42,15 +42,15 @@ public class TimeInDarkScr : MonoBehaviour
         totalTime += Time.deltaTime;
         soundTime++;
 
-        if (totalTime > 30 && totalTime < 30.1)
+        if (totalTime > 360 && totalTime < 30.1)
         {
             canSpawnStaticHaluc = true;
         }
-        if (totalTime > 60)
+        if (totalTime > 480)
         {
-            canSpawnStaticHaluc = true;
+            canSpawnMovingHaluc = true;
         }
-        
+
         if (soundTime % 1000 == 0)
         {
             canSuddenSound = true;
@@ -61,7 +61,7 @@ public class TimeInDarkScr : MonoBehaviour
         // {
         if (totalTime > 100)
         {
-            
+
         }
         SpawnAspect();
         SoundAspect();

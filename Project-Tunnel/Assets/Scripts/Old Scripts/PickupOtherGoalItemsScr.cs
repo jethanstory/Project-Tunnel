@@ -55,17 +55,17 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     {
         if (rustyKnifePickup && !rustyShown)
         {
-            secondsCount += Time.deltaTime;
-
             if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
             {
                 rustyKnifePickupNotificationOldCam.SetActive(true);
             }
+
+            secondsCount += Time.deltaTime;
             rustyKnifePickupNotification.SetActive(true);
 
             if (secondsCount > 2)
             {
-                
+
                 if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
                 {
                     rustyKnifePickupNotificationOldCam.SetActive(false);
@@ -85,12 +85,14 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
         if (crateCrowbarPickup && !crowbarShown)
         {
-            secondsCount += Time.deltaTime;
+
 
             if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
             {
                 crateCrowbarPickupNotificationOldCam.SetActive(true);
             }
+
+            secondsCount += Time.deltaTime;
             crateCrowbarPickupNotification.SetActive(true);
 
             if (secondsCount > 2)
@@ -112,12 +114,13 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
         }
         if (allenKeyPickup && !allenShown)
         {
-            secondsCount += Time.deltaTime;
 
             if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
             {
-                allenKeyPickupNotificationOldCam.SetActive(false);
+                allenKeyPickupNotificationOldCam.SetActive(true);
             }
+
+            secondsCount += Time.deltaTime;
             allenKeyPickupNotification.SetActive(true);
 
             if (secondsCount > 2)
@@ -140,12 +143,13 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
 
         if (flimsySawPickup && !sawShown)
         {
-            secondsCount += Time.deltaTime;
 
             if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
             {
-                flimsySawPickupNotificationOldCam.SetActive(false);
+                flimsySawPickupNotificationOldCam.SetActive(true);
             }
+
+            secondsCount += Time.deltaTime;
             flimsySawPickupNotification.SetActive(true);
 
             if (secondsCount > 2)
