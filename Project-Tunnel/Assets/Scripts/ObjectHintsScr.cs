@@ -196,7 +196,7 @@ public class ObjectHintsScr : MonoBehaviour
             {
                 secondsCount += Time.deltaTime;
                 animatedAllen.SetActive(true);
-                if (secondsCount > 1.8)
+                if (secondsCount > 15)
                 {
                     origGrate.SetActive(false);
                     animatedGrate.SetActive(true);
@@ -204,7 +204,7 @@ public class ObjectHintsScr : MonoBehaviour
                     // animLid.Play();
                 }
 
-                if (secondsCount > 2.6)
+                if (secondsCount > 16)
                 {
                     //animatedCrate.SetActive(false);
                     animatedAllen.SetActive(false);
@@ -256,6 +256,7 @@ public class ObjectHintsScr : MonoBehaviour
         inLockerArea = false;
         inCrateArea = false;
         inSawDoorArea = false;
+        inAllenGrateArea = false;
         // sawPickup.SetActive(false);
 
     }

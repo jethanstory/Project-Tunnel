@@ -137,14 +137,19 @@ public class PickupNoteAdvScr : MonoBehaviour
 
         if (numNotes >= 3)
         {
-            if (other.gameObject.tag == "PickUpThirdNote") //on the object you want to pick up set the tag to be anything, in this case "object"
+            if (other.gameObject.tag == "PickUpOfficeNote") //on the object you want to pick up set the tag to be anything, in this case "object"
             {
+                if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+                {
+                    noteThirdCanvasLowRes.SetActive(true);
+                }
                 canpickup = true;  //set the pick up bool to true
                 ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
                                                         //infoText.SetActive(true);
 
                 noteThirdCanvas.SetActive(true);
-                Txt = GameObject.Find("ThirdNoteText").GetComponent<Text>();
+                // Txt = GameObject.Find("ThirdNoteText").GetComponent<Text>();
+
                 // if (sceneName == "HallsStart") {
                 //     Txt.text = "Becky, \n \n Retrieved the second key from the storage closet. Decided to leave the other key in room 54 and locked the door. Try to meet me in the main hall if you can. \n \n - Ron"; //+ Strength.ToString ();
                 // }
@@ -155,11 +160,11 @@ public class PickupNoteAdvScr : MonoBehaviour
                 // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
                 // notesCanvas.SetActive(false);
                 // }
-                if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
-                {
+                // if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
+                // {
                     // Txt = GameObject.Find ("NoteText").GetComponent<Text> ();
                     // Txt.text = "Becky, \n \n I can't seem to find my key anywhere at all. Been searching around. Have you got it?  \n \n - Ron";
-                }
+                // }
 
 
             }

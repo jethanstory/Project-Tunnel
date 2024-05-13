@@ -9,6 +9,8 @@ public class PickupKeyScr : MonoBehaviour
 
     public GameObject keySound;
 
+    public GameObject stationKeySmallDoorPickupHint;
+
     public int keysCollected;
     public int maxKeys;
 
@@ -41,6 +43,18 @@ public class PickupKeyScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        if (smallStationKeyCollected)
+        {
+            secondsCount += Time.deltaTime;
+            stationKeySmallDoorPickupHint.SetActive(true);
+
+            if (secondsCount > 2)
+            {
+                stationKeySmallDoorPickupHint.SetActive(false);
+            }
+        }
 
         if (inSmallStationDoorArea)
         {
@@ -129,7 +143,6 @@ public class PickupKeyScr : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canpickup = false; //when you leave the collider set the canpickup bool to false
-
     }
 
 }
