@@ -6,9 +6,13 @@ public class ObjectHintsScr : MonoBehaviour
 {
 
     public GameObject rustyHint;
+    public GameObject rustyHintOld;
     public GameObject crateCrowbar;
+    public GameObject crateCrowbarOld;
     public GameObject allenKey;
+    public GameObject allenKeyOld;
     public GameObject flimsySaw;
+    public GameObject flimsySawOld;
 
     bool inCrateArea;
     bool inLockerArea;
@@ -49,6 +53,7 @@ public class ObjectHintsScr : MonoBehaviour
     public float secondsCount = 0f;
 
     public GameObject fpsPlayer;
+    public GameObject rootObject;
 
     bool sawHasPlayed;
     bool crowHasPlayed;
@@ -123,6 +128,10 @@ public class ObjectHintsScr : MonoBehaviour
             }
             else if (!crowHasPlayed)
             {
+                if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+                {
+                    crateCrowbarOld.SetActive(true);
+                }
                 crateCrowbar.SetActive(true);
             }
         }
@@ -155,6 +164,10 @@ public class ObjectHintsScr : MonoBehaviour
             }
             else if (!knifeHasPlayed)
             {
+                if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+                {
+                    rustyHintOld.SetActive(true);
+                }
                 rustyHint.SetActive(true);
             }
         }
@@ -185,6 +198,10 @@ public class ObjectHintsScr : MonoBehaviour
             }
             else if (!sawHasPlayed)
             {
+                if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+                {
+                    flimsySawOld.SetActive(true);
+                }
                 flimsySaw.SetActive(true);
             }
         }
@@ -215,6 +232,10 @@ public class ObjectHintsScr : MonoBehaviour
             }
             else if (!AllenHasPlayed)
             {
+                if (rootObject.GetComponent<BatteryIconScr>().bigSwap)
+                {
+                    allenKeyOld.SetActive(true);
+                }
                 allenKey.SetActive(true);
             }
         }
@@ -257,6 +278,11 @@ public class ObjectHintsScr : MonoBehaviour
         inCrateArea = false;
         inSawDoorArea = false;
         inAllenGrateArea = false;
+        crateCrowbarOld.SetActive(false);
+        allenKeyOld.SetActive(false);
+        allenKeyOld.SetActive(false);
+        flimsySawOld.SetActive(false);
+
         // sawPickup.SetActive(false);
 
     }
