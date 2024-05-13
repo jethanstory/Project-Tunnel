@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PickupNoteAdvScr : MonoBehaviour
 {
     public GameObject myHands; //reference to your hands/the position where you want your object to go
-    bool canpickup; //a bool to see if you can or cant pick up the item
+    // bool canpickup; //a bool to see if you can or cant pick up the item
     GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
     bool hasItem; // a bool to see if you have an item in your hand
 
@@ -68,7 +68,7 @@ public class PickupNoteAdvScr : MonoBehaviour
             {
                 notesCanvasLowRes.SetActive(true);
             }
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             //infoText.SetActive(true);
             notesCanvas.SetActive(true);
@@ -110,7 +110,7 @@ public class PickupNoteAdvScr : MonoBehaviour
             }
             mann.SetActive(true);
             pickedSubsequentNote = true;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
                                                     //infoText.SetActive(true);
 
@@ -145,7 +145,7 @@ public class PickupNoteAdvScr : MonoBehaviour
                 {
                     noteThirdCanvasLowRes.SetActive(true);
                 }
-                canpickup = true;  //set the pick up bool to true
+                // canpickup = true;  //set the pick up bool to true
                 ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
                                                         //infoText.SetActive(true);
 
@@ -200,7 +200,7 @@ public class PickupNoteAdvScr : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        canpickup = false; //when you leave the collider set the canpickup bool to false
+        //canpickup = false; //when you leave the collider set the canpickup bool to false
         //infoText.SetActive(false);
         notesCanvas.SetActive(false);
         noteSecondCanvas.SetActive(false);

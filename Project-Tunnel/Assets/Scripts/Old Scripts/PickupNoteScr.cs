@@ -61,7 +61,7 @@ public class PickupNoteScr : MonoBehaviour
     {
         if(other.gameObject.tag == "PickUpNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             //infoText.SetActive(true);
             notesCanvas.SetActive(true);
@@ -94,7 +94,7 @@ public class PickupNoteScr : MonoBehaviour
         if(other.gameObject.tag == "PickUpSecondNote") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             pickedSubsequentNote = true;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             //infoText.SetActive(true);
             
@@ -121,7 +121,7 @@ public class PickupNoteScr : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        canpickup = false; //when you leave the collider set the canpickup bool to false
+        // canpickup = false; //when you leave the collider set the canpickup bool to false
         //infoText.SetActive(false);
         notesCanvas.SetActive(false);
      

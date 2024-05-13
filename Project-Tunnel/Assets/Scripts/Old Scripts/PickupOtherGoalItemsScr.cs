@@ -133,7 +133,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
         if (other.gameObject.tag == "AllenKeyPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
             allenKeyPickup = true;
@@ -144,7 +144,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
         if (other.gameObject.tag == "RustyKnifePickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
             rustyKnifePickup = true;
@@ -154,7 +154,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
         if (other.gameObject.tag == "CrowbarPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
             crateCrowbarPickup = true;
@@ -164,7 +164,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
         if (other.gameObject.tag == "FlimsySawPickup") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             secondsCount = 0;
-            canpickup = true;  //set the pick up bool to true
+            // canpickup = true;  //set the pick up bool to true
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
             flimsySawPickup = true;
@@ -174,7 +174,7 @@ public class PickupOtherGoalItemsScr : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        canpickup = false; //when you leave the collider set the canpickup bool to false
+        // canpickup = false; //when you leave the collider set the canpickup bool to false
 
     }
 }

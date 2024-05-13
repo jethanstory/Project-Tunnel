@@ -6,7 +6,7 @@ public class TimeInDarkScr : MonoBehaviour
 {
 
     public float totalTime;
-    // public int soundTime = 1;
+    public int soundTime = 1;
     public GameObject scareObject;
     public Transform spawnPoint;
     public bool canSpawnStaticHaluc = false;
@@ -16,7 +16,10 @@ public class TimeInDarkScr : MonoBehaviour
 
     public GameObject staticSpawnAll;
     public GameObject movingSpawnAll;
-    public GameObject suddenNoise;
+    public GameObject suddenMetalDrop;
+    public GameObject distantMetalScrape;
+    public GameObject noisyMetal;
+
     public GameObject advancedNoise;
     public GameObject originalHallNoise;
     public GameObject fpsPlayer;
@@ -37,18 +40,21 @@ public class TimeInDarkScr : MonoBehaviour
         }
 
         totalTime += Time.deltaTime;
-        // soundTime++;
+        soundTime++;
 
         if (totalTime > 30 && totalTime < 30.1)
         {
             canSpawnStaticHaluc = true;
-            canSuddenSound = true;
         }
         if (totalTime > 60)
         {
             canSpawnStaticHaluc = true;
         }
-
+        
+        if (soundTime % 1000 == 0)
+        {
+            canSuddenSound = true;
+        }
         // if (soundTime % 100 == 0)
         // {
         // if (totalTime % 100 == 0)
@@ -81,9 +87,26 @@ public class TimeInDarkScr : MonoBehaviour
     {
         if (canSuddenSound)
         {
-            suddenNoise.SetActive(false);
-            suddenNoise.SetActive(true);
-            canSuddenSound = false;
+            int soundSelection = Random.Range(1, 3);
+
+            if (soundSelection == 1)
+            {
+                suddenMetalDrop.SetActive(false);
+                suddenMetalDrop.SetActive(true);
+                canSuddenSound = false;
+            }
+            if (soundSelection == 2)
+            {
+                distantMetalScrape.SetActive(false);
+                distantMetalScrape.SetActive(true);
+                canSuddenSound = false;
+            }
+            if (soundSelection == 3)
+            {
+                noisyMetal.SetActive(false);
+                noisyMetal.SetActive(true);
+                canSuddenSound = false;
+            }
         }
     }
 }
