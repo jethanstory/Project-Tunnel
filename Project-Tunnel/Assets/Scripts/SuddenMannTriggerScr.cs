@@ -11,6 +11,7 @@ public class SuddenMannTriggerScr : MonoBehaviour
     float secondsCount = 0f;
 
     public GameObject Sound;
+    public GameObject startSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class SuddenMannTriggerScr : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
 
             Sound.SetActive(true);
+            startSound.SetActive(true);
             //SceneManager.LoadScene(2);
             Debug.Log("HIT");
 
