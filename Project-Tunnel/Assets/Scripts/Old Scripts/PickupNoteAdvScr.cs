@@ -88,14 +88,15 @@ public class PickupNoteAdvScr : MonoBehaviour
             // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
             //     notesCanvas.SetActive(false);
             // }
-            if (fpsPlayer.GetComponent<PickupKeyScr>().firstKeyCollected)
-            {
-                Txt = GameObject.Find("NoteText").GetComponent<Text>();
-                if (sceneName == "HallsStart")
-                {
-                    Txt.text = "Ron, \n \n Did you take my key? I can't find it anywhere. \n \n - Becky";
-                }
-            }
+
+            // if (fpsPlayer.GetComponent<PickupKeyScr>().firstKeyCollected)
+            // {
+            //     Txt = GameObject.Find("NoteText").GetComponent<Text>();
+            //     if (sceneName == "HallsStart")
+            //     {
+            //         Txt.text = "Ron, \n \n Did you take my key? I can't find it anywhere. \n \n - Becky";
+            //     }
+            // }
 
 
         }
@@ -126,11 +127,12 @@ public class PickupNoteAdvScr : MonoBehaviour
             // if (fpsPlayer.GetComponent<PickUpObject>().isViewing) {
             // notesCanvas.SetActive(false);
             // }
-            if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
-            {
-                Txt = GameObject.Find("SecondNoteText").GetComponent<Text>();
-                Txt.text = "Becky, \n \n I can't seem to find my key anywhere at all. Been searching around. Have you got it?  \n \n - Ron";
-            }
+
+            // if (fpsPlayer.GetComponent<PickupKeyScr>().secondKeyCollected)
+            // {
+            //     Txt = GameObject.Find("SecondNoteText").GetComponent<Text>();
+            //     Txt.text = "Becky, \n \n I can't seem to find my key anywhere at all. Been searching around. Have you got it?  \n \n - Ron";
+            // }
 
 
         }

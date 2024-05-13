@@ -24,6 +24,7 @@ TagManager:
   - OfficeKeyPickup
   - SmallStationDoorHint
   - AllenKeyGrateHint
+  - FilmTrig
   layers:
   - Default
   - TransparentFX
