@@ -9,6 +9,9 @@ public class TimeInDarkScr : MonoBehaviour
     public GameObject scareObject;
     public Transform spawnPoint;
     public bool canSpawnStaticHaluc = false;
+    public bool canSpawnMovingHaluc = false;
+
+    public GameObject staticSpawnAll;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +27,22 @@ public class TimeInDarkScr : MonoBehaviour
         {
             canSpawnStaticHaluc = true;
         }
-        SpawnAspect();
+        SpawnAspectStatic();
     }
 
-    void SpawnAspect()
+    void SpawnAspectStatic()
     {
-        if (canSpawn)
+        if (canSpawnStaticHaluc)
+        {
+            // GameObject scareInstance = Instantiate(scareObject, spawnPoint.position, spawnPoint.rotation);
+            staticSpawnAll.SetActive(true);
+            canSpawnStaticHaluc = false;
+        }
+
+        if (canSpawnMovingHaluc)
         {
             GameObject scareInstance = Instantiate(scareObject, spawnPoint.position, spawnPoint.rotation);
-            canSpawn = false;
+            canSpawnMovingHaluc = false;
         }
     }
 }
