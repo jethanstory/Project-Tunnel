@@ -208,9 +208,11 @@ public class PickupNoteAdvScr : MonoBehaviour
         noteSecondCanvasLowRes.SetActive(false);
 
 
+
         if (numNotes >= 3)
         {
             noteThirdCanvas.SetActive(false);
+            noteThirdCanvasLowRes.SetActive(false);
         }
 
     }
