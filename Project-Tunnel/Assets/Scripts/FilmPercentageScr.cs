@@ -35,6 +35,7 @@ public class FilmPercentageScr : MonoBehaviour
         if (secondsCountInital > 3)
         {
             initalHint.SetActive(false);
+            secondsCountInital = 4;
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
