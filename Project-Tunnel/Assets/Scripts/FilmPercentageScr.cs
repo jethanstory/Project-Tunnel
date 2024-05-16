@@ -15,6 +15,7 @@ public class FilmPercentageScr : MonoBehaviour
     public GameObject playerNotes;
     public GameObject playerNotesOld;
     bool activeNotes;
+    bool activeNotesOld;
     public GameObject rootObject;
     public Text Txt;
     public TMPro.TMP_Text percentageAmount;
@@ -95,9 +96,9 @@ public class FilmPercentageScr : MonoBehaviour
 
     public void checkNotesOld()
     {
-        if (activeNotes)
+        if (activeNotesOld)
         {
-            activeNotes = false;
+            activeNotesOld = false;
             percentageAmountOld.text = " ";
             // Time.timeScale = 1;
             // Cursor.lockState = CursorLockMode.Locked;
@@ -106,7 +107,7 @@ public class FilmPercentageScr : MonoBehaviour
         }
         else
         {
-            activeNotes = true;
+            activeNotesOld = true;
             // Time.timeScale = 0;
             percentageAmountOld.text = filmPercentageCount.ToString();
             // Cursor.lockState = CursorLockMode.None;
