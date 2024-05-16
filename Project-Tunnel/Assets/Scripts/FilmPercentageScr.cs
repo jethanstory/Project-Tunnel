@@ -17,9 +17,20 @@ public class FilmPercentageScr : MonoBehaviour
     bool activeNotes;
     bool activeNotesOld;
     public GameObject rootObject;
+    public GameObject fpsPlayer;
     public Text Txt;
     public TMPro.TMP_Text percentageAmount;
     public TMPro.TMP_Text percentageAmountOld;
+
+    public GameObject rustyKnifeInven;
+    public GameObject flimsySawInven;
+    public GameObject allenKeyInven;
+    public GameObject crateCrowbarInven;
+
+    public GameObject rustyKnifeInvenOld;
+    public GameObject flimsySawInvenOld;
+    public GameObject allenKeyInvenOld;
+    public GameObject crateCrowbarInvenOld;
     // public TMPro.TextMeshProUGUI percentageAmount;
 
     // Start is called before the first frame update
@@ -86,6 +97,22 @@ public class FilmPercentageScr : MonoBehaviour
         {
             activeNotes = true;
             percentageAmount.text = filmPercentageCount.ToString();
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().rustyKnifePickup)
+            {
+                rustyKnifeInven.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().crateCrowbarPickup)
+            {
+                crateCrowbarInven.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().allenKeyPickup)
+            {
+                allenKeyInven.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().flimsySawPickup)
+            {
+                flimsySawInven.SetActive(true);
+            }
             // Time.timeScale = 0;
             // Cursor.lockState = CursorLockMode.None;
             // Cursor.visible = true;
@@ -110,6 +137,23 @@ public class FilmPercentageScr : MonoBehaviour
             activeNotesOld = true;
             // Time.timeScale = 0;
             percentageAmountOld.text = filmPercentageCount.ToString();
+
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().rustyKnifePickup)
+            {
+                rustyKnifeInvenOld.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().crateCrowbarPickup)
+            {
+                crateCrowbarInvenOld.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().allenKeyPickup)
+            {
+                allenKeyInvenOld.SetActive(true);
+            }
+            if (fpsPlayer.GetComponent<PickupOtherGoalItemsScr>().flimsySawPickup)
+            {
+                flimsySawInvenOld.SetActive(true);
+            }
             // Cursor.lockState = CursorLockMode.None;
             // Cursor.visible = true;
             playerNotesOld.SetActive(true);
