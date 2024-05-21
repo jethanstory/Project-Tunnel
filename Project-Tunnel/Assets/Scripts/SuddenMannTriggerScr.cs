@@ -12,6 +12,8 @@ public class SuddenMannTriggerScr : MonoBehaviour
 
     public GameObject Sound;
     public GameObject startSound;
+    public GameObject startFlicker;
+    public GameObject normalLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,9 @@ public class SuddenMannTriggerScr : MonoBehaviour
             Debug.Log("HIT");
 
             isTriggered = true;
+            // startFlicker.SetActive(true);
+            normalLight.SetActive(false);
+            GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = true;
             // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             // Destroy(ObjectIwantToDestroy);
 
@@ -70,7 +75,13 @@ public class SuddenMannTriggerScr : MonoBehaviour
             secondsCount += Time.deltaTime;
             if (secondsCount > 5)
             {
+                // startFlicker.SetActive(false);
                 mann.SetActive(false);
+                normalLight.SetActive(true);
+                GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = false;
+                if (secondsCount > 6)
+                    startFlicker.SetActive(false);
+
             }
 
         }
