@@ -13,7 +13,10 @@ public class SuddenMannTriggerScr : MonoBehaviour
     public GameObject Sound;
     public GameObject startSound;
     public GameObject startFlicker;
+    public GameObject startFlickerOld;
+
     public GameObject normalLight;
+    public GameObject normalLightOld;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +58,10 @@ public class SuddenMannTriggerScr : MonoBehaviour
             isTriggered = true;
             // startFlicker.SetActive(true);
             normalLight.SetActive(false);
+            // normalLightOld.SetActive(false);
             GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = true;
+            // GameObject.Find("Camera_old").GetComponent<FlickeringLight>().enabled = true;
+
             // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             // Destroy(ObjectIwantToDestroy);
 
@@ -78,9 +84,13 @@ public class SuddenMannTriggerScr : MonoBehaviour
                 // startFlicker.SetActive(false);
                 mann.SetActive(false);
                 normalLight.SetActive(true);
+                normalLightOld.SetActive(true);
                 GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = false;
-                if (secondsCount > 6)
+                // GameObject.Find("Camera_old").GetComponent<FlickeringLight>().enabled = false;
+                if (secondsCount > 6) {
                     startFlicker.SetActive(false);
+                    // startFlickerOld.SetActive(false);
+                }
 
             }
 

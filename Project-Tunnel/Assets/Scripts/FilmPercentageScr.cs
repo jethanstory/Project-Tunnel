@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class FilmPercentageScr : MonoBehaviour
+public class FilmPercentageScr : MonoBehaviour // Script to display percentage of the station area discovered and recorded
 {
     bool canpickup; //a bool to see if you can or cant pick up the item
     GameObject ObjectIwantToDestroy; // the gameobject onwhich you collided with

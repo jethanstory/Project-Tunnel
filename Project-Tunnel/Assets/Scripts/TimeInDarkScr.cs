@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeInDarkScr : MonoBehaviour
+public class TimeInDarkScr : MonoBehaviour // Script to control and spawn hallucinations to frighten the player over time
 {
 
     public float totalTime;
@@ -42,7 +42,7 @@ public class TimeInDarkScr : MonoBehaviour
         totalTime += Time.deltaTime;
         soundTime++;
 
-        if (totalTime > 360 && totalTime < 30.1)
+        if (totalTime > 360) // && totalTime < 30.1)
         {
             canSpawnStaticHaluc = true;
         }
