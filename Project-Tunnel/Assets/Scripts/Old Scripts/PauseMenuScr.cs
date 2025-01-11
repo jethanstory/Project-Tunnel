@@ -6,6 +6,7 @@ public class PauseMenuScr : MonoBehaviour
 {
 
     public GameObject menuCanvas;
+    public GameObject oldMenuCanvas;
     private bool activeMenu; 
 
 
@@ -32,6 +33,7 @@ public class PauseMenuScr : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             menuCanvas.SetActive(false);
+            oldMenuCanvas.SetActive(false);
         }
         else
         {
@@ -40,6 +42,7 @@ public class PauseMenuScr : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             menuCanvas.SetActive(true);
+            oldMenuCanvas.SetActive(true);
 
         }
     }

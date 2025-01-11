@@ -56,10 +56,12 @@ public class SuddenMannTriggerScr : MonoBehaviour
             Debug.Log("HIT");
 
             isTriggered = true;
-            // startFlicker.SetActive(true);
+            startFlicker.SetActive(true);
             normalLight.SetActive(false);
-            // normalLightOld.SetActive(false);
-            GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = true;
+            normalLightOld.SetActive(false);
+            startFlickerOld.SetActive(true);
+            // GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = true;
+
             // GameObject.Find("Camera_old").GetComponent<FlickeringLight>().enabled = true;
 
             // ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
@@ -86,10 +88,11 @@ public class SuddenMannTriggerScr : MonoBehaviour
                 normalLight.SetActive(true);
                 normalLightOld.SetActive(true);
                 GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = false;
+
                 // GameObject.Find("Camera_old").GetComponent<FlickeringLight>().enabled = false;
                 if (secondsCount > 6) {
                     startFlicker.SetActive(false);
-                    // startFlickerOld.SetActive(false);
+                    startFlickerOld.SetActive(false);
                 }
 
             }
