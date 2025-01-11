@@ -87,7 +87,7 @@ public class SuddenMannTriggerScr : MonoBehaviour
                 mann.SetActive(false);
                 normalLight.SetActive(true);
                 normalLightOld.SetActive(true);
-                GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = false;
+                // GameObject.Find("Camera_adv").GetComponent<FlickeringLight>().enabled = false;
 
                 // GameObject.Find("Camera_old").GetComponent<FlickeringLight>().enabled = false;
                 if (secondsCount > 6) {
