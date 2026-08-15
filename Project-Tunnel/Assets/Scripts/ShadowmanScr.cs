@@ -10,6 +10,11 @@ public class ShadowmanScr : MonoBehaviour
     public GameObject shadow;
     public float timeIn;
 
+    bool canSuddenSound;
+
+    public GameObject reactSound;
+    public GameObject reactSoundGroup;
+
     public bool hasCollided;
     //public bool is
     // Start is called before the first frame update
@@ -38,6 +43,8 @@ public class ShadowmanScr : MonoBehaviour
             Debug.Log("HIT");
             ObjectIwantToDestroy = other.gameObject; //set the gameobject you collided with to one you can reference
             Destroy(ObjectIwantToDestroy);
+            canSuddenSound = true;
+
             //shadow.SetActive(false);
 
 
@@ -58,8 +65,35 @@ public class ShadowmanScr : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        SoundAspect();
+    }
 
+    void SoundAspect()
+    {
+        if (canSuddenSound)
+        {
+            int soundSelection = Random.Range(1, 3);
+
+            if (soundSelection == 1)
+            {
+                reactSound.SetActive(false);
+                reactSound.SetActive(true);
+                canSuddenSound = false;
+            }
+            if (soundSelection == 2)
+            {
+                reactSoundGroup.SetActive(false);
+                reactSoundGroup.SetActive(true);
+                canSuddenSound = false;
+            }
+            // if (soundSelection == 3)
+            // {
+            //     noisyMetal.SetActive(false);
+            //     noisyMetal.SetActive(true);
+            //     canSuddenSound = false;
+            // }
+        }
     }
 }
